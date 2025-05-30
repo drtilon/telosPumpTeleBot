@@ -1,0 +1,51 @@
+{
+  "tokens": {
+    "0x5968eAFCffbd06938a1E1b915761423CEdEE5eD0": {
+      "lp_address": "0xFEC501F6BE0a280CBc19EdCC49a9CE6A4449E46a",
+      "symbol": "TKING",
+      "decimals": 18,
+      "active": true
+    }
+  },
+  "message_tiers": [
+    {
+      "min_mst": 0,
+      "max_mst": 250,
+      "name": "Small Buy",
+      "template": "🟢 <b>{symbol} Small Buy Detected! {usd_value}$</b>\n\n💰 <b>Amount:</b> {amount} {symbol}\n🏆 <b>MST Value:</b> ~{mst_value} MST\n💵 <b>USD Value:</b> ~${usd_value}\n📦 <b>Block:</b> {block_number}\n🔗 <a href='https://teloscan.io/tx/{tx_hash}'>View Transaction</a>",
+      "video_path": "spider.mp4"
+    },
+    {
+      "min_mst": 251,
+      "max_mst": 1000,
+      "name": "Medium Buy",
+      "template": "🔥 <b>{symbol} MEDIUM BUY ALERT! {usd_value}$</b> 🔥\n\n💰 <b>Amount:</b> {amount} {symbol}\n🏆 <b>MST Value:</b> ~{mst_value} MST\n💵 <b>USD Value:</b> ~${usd_value}\n📦 <b>Block:</b> {block_number}\n🔗 <a href='https://teloscan.io/tx/{tx_hash}'>View Transaction</a>\n\n🚀 Someone believes in this token! 🚀",
+      "video_path": "rocket.mp4"
+    },
+    {
+      "min_mst": 1001,
+      "max_mst": 2500,
+      "name": "Large Buy",
+      "template": "🚨 <b>{symbol} BIG BUY INCOMING! {usd_value}$</b> 🚨\n\n💰 <b>Amount:</b> {amount} {symbol}\n🏆 <b>MST Value:</b> ~{mst_value} MST\n💵 <b>USD Value:</b> ~${usd_value}\n📦 <b>Block:</b> {block_number}\n🔗 <a href='https://teloscan.io/tx/{tx_hash}'>View Transaction</a>\n\n🔥🔥 BULLISH SIGNAL! 🔥🔥\n💎 Diamond hands are accumulating! 💎",
+      "video_path": "dolphin.mp4"
+    },
+    {
+      "min_mst": 2501,
+      "max_mst": 10000,
+      "name": "Whale Buy",
+      "template": "🐋 <b>{symbol} WHALE ALERT! {usd_value}$</b> 🐋\n━━━━━━━━━━━━━━━━━━━━━━\n\n💰 <b>Amount:</b> {amount} {symbol}\n🏆 <b>MST Value:</b> ~{mst_value} MST\n💵 <b>USD Value:</b> ~${usd_value}\n📦 <b>Block:</b> {block_number}\n🔗 <a href='https://teloscan.io/tx/{tx_hash}'>View Transaction</a>\n\n🌊🌊 MASSIVE WHALE MOVEMENT! 🌊🌊\n🚀 TO THE MOON! 🚀\n💰 Smart money is flowing in! 💰",
+      "video_path": "whale.mp4"
+    },
+    {
+      "min_mst": 10001,
+      "max_mst": 999999999,
+      "name": "Mega Whale",
+      "template": "🚨🐋 <b>{symbol} MEGA WHALE DETECTED! {usd_value}$</b> 🐋🚨\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 <b>Amount:</b> {amount} {symbol}\n🏆 <b>MST Value:</b> ~{mst_value} MST\n💵 <b>USD Value:</b> ~${usd_value}\n📦 <b>Block:</b> {block_number}\n🔗 <a href='https://teloscan.io/tx/{tx_hash}'>View Transaction</a>\n\n🔥🔥🔥 INSANE BUY PRESSURE! 🔥🔥🔥\n🚀🚀🚀 MOON MISSION ACTIVATED! 🚀🚀🚀\n💎 INSTITUTIONAL MONEY INCOMING! 💎\n⚡ THIS IS THE SIGNAL WE'VE BEEN WAITING FOR! ⚡",
+      "video_path": "dino.mp4"
+    }
+  ],
+  "mst_token_address": "0x568524DA340579887db50Ecf602Cd1BA8451b243",
+  "mst_decimals": 18,
+  "fallback_mst_rate": 1.0,
+  "videos_folder": "videos"
+}

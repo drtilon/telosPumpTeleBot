@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  telospump-bot:
+    build: .
+    container_name: telospump-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - CHANNEL_ID=${CHANNEL_ID}
+      - ALERTS_THREAD_ID=${ALERTS_THREAD_ID}
+      - ADMIN_IDS=${ADMIN_IDS}
+      - RPC_URL=${RPC_URL}
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    volumes:
+      # Mount all Python files for live development
+      - ./main.py:/app/main.py
+      - ./bot.py:/app/bot.py
+      - ./config_manager.py:/app/config_manager.py
+      - ./admin_handlers.py:/app/admin_handlers.py
+      - ./blockchain_monitor.py:/app/blockchain_monitor.py
+      - ./telegram_utils.py:/app/telegram_utils.py
+      - ./test.py:/app/test.py
+      - ./test_bot_send.py:/app/test_bot_send.py
+      - ./get_channel_id.py:/app/get_channel_id.py
+      
+      # Mount configuration and data files
+      - ./bot_config.json:/app/bot_config.json
+      - ./.env:/app/.env
+      - ./requirements.txt:/app/requirements.txt
+      
+      # Mount directories
+      - ./videos:/app/videos
+      - ./logs:/app/logs
+      
+      # Optional: Mount the entire project directory (alternative approach)
+      # - .:/app
+      
+    networks:
+      - telospump-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  telospump-network:
+    driver: bridge
